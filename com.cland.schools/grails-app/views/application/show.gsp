@@ -23,24 +23,6 @@
 			</g:if>
 			<ol class="property-list application">
 			
-				<g:if test="${applicationInstance?.application_date}">
-				<li class="fieldcontain">
-					<span id="application_date-label" class="property-label"><g:message code="application.application_date.label" default="Applicationdate" /></span>
-					
-						<span class="property-value" aria-labelledby="application_date-label"><g:formatDate date="${applicationInstance?.application_date}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicationInstance?.minGrade}">
-				<li class="fieldcontain">
-					<span id="minGrade-label" class="property-label"><g:message code="application.minGrade.label" default="Min Grade" /></span>
-					
-						<span class="property-value" aria-labelledby="minGrade-label"><g:fieldValue bean="${applicationInstance}" field="minGrade"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${applicationInstance?.applicant}">
 				<li class="fieldcontain">
 					<span id="applicant-label" class="property-label"><g:message code="application.applicant.label" default="Applicant" /></span>
@@ -50,14 +32,24 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${applicationInstance?.maxGrade}">
+				<g:if test="${applicationInstance?.application_date}">
 				<li class="fieldcontain">
-					<span id="maxGrade-label" class="property-label"><g:message code="application.maxGrade.label" default="Max Grade" /></span>
+					<span id="application_date-label" class="property-label"><g:message code="application.application_date.label" default="Applicationdate" /></span>
 					
-						<span class="property-value" aria-labelledby="maxGrade-label"><g:fieldValue bean="${applicationInstance}" field="maxGrade"/></span>
+						<span class="property-value" aria-labelledby="application_date-label"><g:formatDate date="${applicationInstance?.application_date}" /></span>
 					
 				</li>
 				</g:if>
+			
+				<g:if test="${applicationInstance?.grade}">
+				<li class="fieldcontain">
+					<span id="grade-label" class="property-label"><g:message code="application.grade.label" default="Grade" /></span>
+					
+						<span class="property-value" aria-labelledby="grade-label"><g:fieldValue bean="${applicationInstance}" field="grade"/></span>
+					
+				</li>
+				</g:if>
+			
 			
 				<g:if test="${applicationInstance?.parent}">
 				<li class="fieldcontain">

@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="dob-label" class="property-label"><g:message code="applicant.dob.label" default="Dob" /></span>
 					
-						<span class="property-value" aria-labelledby="dob-label"><g:fieldValue bean="${applicantInstance}" field="dob"/></span>
+						<span class="property-value" aria-labelledby="dob-label"><g:formatDate date="${applicantInstance?.dob}" /></span>
 					
 				</li>
 				</g:if>
@@ -64,15 +64,6 @@
 					<span id="contactNumber-label" class="property-label"><g:message code="applicant.contactNumber.label" default="Contact Number" /></span>
 					
 						<span class="property-value" aria-labelledby="contactNumber-label"><g:fieldValue bean="${applicantInstance}" field="contactNumber"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicantInstance?.application}">
-				<li class="fieldcontain">
-					<span id="application-label" class="property-label"><g:message code="applicant.application.label" default="Application" /></span>
-					
-						<span class="property-value" aria-labelledby="application-label"><g:link controller="application" action="show" id="${applicantInstance?.application?.id}">${applicantInstance?.application?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

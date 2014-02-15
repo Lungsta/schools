@@ -7,7 +7,7 @@ class Parent {
     String address
 	String contactNumber
 
-	static hasMany=[applicants:Applicant, applications:Application]
+	static hasMany=[applicants:Applicant]
 	
     static constraints = {
 		firstName(blank: false, nullable: false, maxSize: 255)

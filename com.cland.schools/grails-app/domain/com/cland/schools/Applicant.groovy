@@ -6,7 +6,7 @@ class Applicant {
 	String lastName
 	String address
 	String contactNumber
-	String dob  
+	Date dob  
 	
 	static belongsTo=[parent:Parent]
 	static constraints = {

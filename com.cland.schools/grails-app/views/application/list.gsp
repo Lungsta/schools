@@ -24,14 +24,12 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="application_date" title="${message(code: 'application.application_date.label', default: 'Applicationdate')}" />
-					
-						<g:sortableColumn property="minGrade" title="${message(code: 'application.minGrade.label', default: 'Min Grade')}" />
-					
 						<th><g:message code="application.applicant.label" default="Applicant" /></th>
 					
-						<g:sortableColumn property="maxGrade" title="${message(code: 'application.maxGrade.label', default: 'Max Grade')}" />
+						<g:sortableColumn property="application_date" title="${message(code: 'application.application_date.label', default: 'Applicationdate')}" />
 					
+						<g:sortableColumn property="grade" title="${message(code: 'application.grade.label', default: 'Grade')}" />
+										
 						<th><g:message code="application.parent.label" default="Parent" /></th>
 					
 					</tr>
@@ -40,14 +38,12 @@
 				<g:each in="${applicationInstanceList}" status="i" var="applicationInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${applicationInstance.id}">${fieldValue(bean: applicationInstance, field: "application_date")}</g:link></td>
+						<td><g:link action="show" id="${applicationInstance.id}">${fieldValue(bean: applicationInstance, field: "applicant")}</g:link></td>
 					
-						<td>${fieldValue(bean: applicationInstance, field: "minGrade")}</td>
+						<td><g:formatDate date="${applicationInstance.application_date}" /></td>
 					
-						<td>${fieldValue(bean: applicationInstance, field: "applicant")}</td>
-					
-						<td>${fieldValue(bean: applicationInstance, field: "maxGrade")}</td>
-					
+						<td>${fieldValue(bean: applicationInstance, field: "grade")}</td>
+										
 						<td>${fieldValue(bean: applicationInstance, field: "parent")}</td>
 					
 					</tr>

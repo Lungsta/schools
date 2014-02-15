@@ -23,7 +23,7 @@
 		<g:message code="applicant.dob.label" default="Dob" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="dob" cols="40" rows="5" maxlength="255" required="" value="${applicantInstance?.dob}"/>
+	<g:datePicker name="dob" precision="day"  value="${applicantInstance?.dob}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'address', 'error')} required">
@@ -40,14 +40,6 @@
 		
 	</label>
 	<g:textArea name="contactNumber" cols="40" rows="5" maxlength="255" value="${applicantInstance?.contactNumber}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'application', 'error')} required">
-	<label for="application">
-		<g:message code="applicant.application.label" default="Application" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="application" name="application.id" from="${com.cland.schools.Application.list()}" optionKey="id" required="" value="${applicantInstance?.application?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'parent', 'error')} required">

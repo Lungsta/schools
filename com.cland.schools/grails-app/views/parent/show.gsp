@@ -79,17 +79,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${parentInstance?.applications}">
-				<li class="fieldcontain">
-					<span id="applications-label" class="property-label"><g:message code="parent.applications.label" default="Applications" /></span>
-					
-						<g:each in="${parentInstance.applications}" var="a">
-						<span class="property-value" aria-labelledby="applications-label"><g:link controller="application" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

@@ -2,36 +2,28 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'application_date', 'error')} required">
-	<label for="application_date">
-		<g:message code="application.application_date.label" default="Applicationdate" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="application_date" precision="day"  value="${applicationInstance?.application_date}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'minGrade', 'error')} required">
-	<label for="minGrade">
-		<g:message code="application.minGrade.label" default="Min Grade" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select name="minGrade" from="${applicationInstance.constraints.minGrade.inList}" required="" value="${fieldValue(bean: applicationInstance, field: 'minGrade')}" valueMessagePrefix="application.minGrade"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'applicant', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'applicant', 'error')} ">
 	<label for="applicant">
 		<g:message code="application.applicant.label" default="Applicant" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:select id="applicant" name="applicant.id" from="${com.cland.schools.Applicant.list()}" optionKey="id" required="" value="${applicationInstance?.applicant?.id}" class="many-to-one"/>
+	<g:select id="applicant" name="applicant.id" from="${com.cland.schools.Applicant.list()}" optionKey="id" value="${applicationInstance?.applicant?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'maxGrade', 'error')} required">
-	<label for="maxGrade">
-		<g:message code="application.maxGrade.label" default="Max Grade" />
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'application_date', 'error')} ">
+	<label for="application_date">
+		<g:message code="application.application_date.label" default="Applicationdate" />
+		
+	</label>
+	<g:datePicker name="application_date" precision="day"  value="${applicationInstance?.application_date}" default="none" noSelection="['': '']" />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'grade', 'error')} required">
+	<label for="grade">
+		<g:message code="application.grade.label" default="Grade" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="maxGrade" type="number" value="${applicationInstance.maxGrade}" required=""/>
+	<g:select name="grade" from="${applicationInstance.constraints.grade.inList}" required="" value="${fieldValue(bean: applicationInstance, field: 'grade')}" valueMessagePrefix="application.grade"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'parent', 'error')} required">

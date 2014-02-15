@@ -59,20 +59,3 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'applications', 'error')} ">
-	<label for="applications">
-		<g:message code="parent.applications.label" default="Applications" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${parentInstance?.applications?}" var="a">
-    <li><g:link controller="application" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="application" action="create" params="['parent.id': parentInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'application.label', default: 'Application')])}</g:link>
-</li>
-</ul>
-
-</div>
-

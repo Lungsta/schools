@@ -34,7 +34,7 @@
 					
 						<g:sortableColumn property="contactNumber" title="${message(code: 'applicant.contactNumber.label', default: 'Contact Number')}" />
 					
-						<th><g:message code="applicant.application.label" default="Application" /></th>
+						<th><g:message code="applicant.parent.label" default="Parent" /></th>
 					
 					</tr>
 				</thead>
@@ -46,13 +46,13 @@
 					
 						<td>${fieldValue(bean: applicantInstance, field: "lastName")}</td>
 					
-						<td>${fieldValue(bean: applicantInstance, field: "dob")}</td>
+						<td><g:formatDate date="${applicantInstance.dob}" /></td>
 					
 						<td>${fieldValue(bean: applicantInstance, field: "address")}</td>
 					
 						<td>${fieldValue(bean: applicantInstance, field: "contactNumber")}</td>
 					
-						<td>${fieldValue(bean: applicantInstance, field: "application")}</td>
+						<td>${fieldValue(bean: applicantInstance, field: "parent")}</td>
 					
 					</tr>
 				</g:each>
