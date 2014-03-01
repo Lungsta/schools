@@ -11,6 +11,6 @@ class School {
     static constraints = {
 		name nullable: false, blank: false, unique: true
         address unique: true, nullable: false, blank: false
-		grade nullable: false, blank: false
+		grade unique: true, nullable: false, blank: false
 }
 }

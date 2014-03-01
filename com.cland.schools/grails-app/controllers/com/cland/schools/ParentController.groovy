@@ -1,7 +1,9 @@
 package com.cland.schools
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
+@Secured(['isAuthenticated()'])
 class ParentController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -14,7 +16,7 @@ class ParentController {
         params.max = Math.min(max ?: 10, 100)
         [parentInstanceList: Parent.list(params), parentInstanceTotal: Parent.count()]
     }
-
+	@Secured(['ROLE_PARENT'])
     def create() {
         [parentInstance: new Parent(params)]
     }

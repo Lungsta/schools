@@ -24,15 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="firstName" title="${message(code: 'parent.firstName.label', default: 'First Name')}" />
+						<g:sortableColumn property="firstName1" title="${message(code: 'parent.firstName1.label', default: 'First Name1')}" />
 					
-						<g:sortableColumn property="lastName" title="${message(code: 'parent.lastName.label', default: 'Last Name')}" />
+						<g:sortableColumn property="lastName1" title="${message(code: 'parent.lastName1.label', default: 'Last Name1')}" />
 					
-						<g:sortableColumn property="email" title="${message(code: 'parent.email.label', default: 'Email')}" />
+						<g:sortableColumn property="firstName2" title="${message(code: 'parent.firstName2.label', default: 'First Name2')}" />
 					
-						<g:sortableColumn property="address" title="${message(code: 'parent.address.label', default: 'Address')}" />
+						<g:sortableColumn property="lastName2" title="${message(code: 'parent.lastName2.label', default: 'Last Name2')}" />
 					
-						<g:sortableColumn property="contactNumber" title="${message(code: 'parent.contactNumber.label', default: 'Contact Number')}" />
+						<g:sortableColumn property="firstName3" title="${message(code: 'parent.firstName3.label', default: 'First Name3')}" />
+					
+						<g:sortableColumn property="lastName3" title="${message(code: 'parent.lastName3.label', default: 'Last Name3')}" />
 					
 					</tr>
 				</thead>
@@ -40,15 +42,17 @@
 				<g:each in="${parentInstanceList}" status="i" var="parentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${parentInstance.id}">${fieldValue(bean: parentInstance, field: "firstName")}</g:link></td>
+						<td><g:link action="show" id="${parentInstance.id}">${fieldValue(bean: parentInstance, field: "firstName1")}</g:link></td>
 					
-						<td>${fieldValue(bean: parentInstance, field: "lastName")}</td>
+						<td>${fieldValue(bean: parentInstance, field: "lastName1")}</td>
 					
-						<td>${fieldValue(bean: parentInstance, field: "email")}</td>
+						<td>${fieldValue(bean: parentInstance, field: "firstName2")}</td>
 					
-						<td>${fieldValue(bean: parentInstance, field: "address")}</td>
+						<td>${fieldValue(bean: parentInstance, field: "lastName2")}</td>
 					
-						<td>${fieldValue(bean: parentInstance, field: "contactNumber")}</td>
+						<td>${fieldValue(bean: parentInstance, field: "firstName3")}</td>
+					
+						<td>${fieldValue(bean: parentInstance, field: "lastName3")}</td>
 					
 					</tr>
 				</g:each>

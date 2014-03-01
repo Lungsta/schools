@@ -89,3 +89,10 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.active = true
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/'
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.cland.schools.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.cland.schools.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.cland.schools.Role'
