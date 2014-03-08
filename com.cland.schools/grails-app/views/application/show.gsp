@@ -50,7 +50,6 @@
 				</li>
 				</g:if>
 			
-			
 				<g:if test="${applicationInstance?.parent}">
 				<li class="fieldcontain">
 					<span id="parent-label" class="property-label"><g:message code="application.parent.label" default="Parent" /></span>

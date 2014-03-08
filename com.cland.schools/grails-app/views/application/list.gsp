@@ -29,7 +29,7 @@
 						<g:sortableColumn property="application_date" title="${message(code: 'application.application_date.label', default: 'Applicationdate')}" />
 					
 						<g:sortableColumn property="grade" title="${message(code: 'application.grade.label', default: 'Grade')}" />
-										
+					
 						<th><g:message code="application.parent.label" default="Parent" /></th>
 					
 					</tr>
@@ -43,7 +43,7 @@
 						<td><g:formatDate date="${applicationInstance.application_date}" /></td>
 					
 						<td>${fieldValue(bean: applicationInstance, field: "grade")}</td>
-										
+					
 						<td>${fieldValue(bean: applicationInstance, field: "parent")}</td>
 					
 					</tr>

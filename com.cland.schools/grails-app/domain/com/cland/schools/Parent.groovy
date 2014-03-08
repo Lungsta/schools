@@ -25,6 +25,6 @@ class Parent {
 		contactNumber(nullable: true, maxSize: 255)
     }
 	String toString(){
-		"${firstName}"
+		"${firstName1}"
 	}
 }

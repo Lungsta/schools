@@ -16,7 +16,7 @@ class ParentController {
         params.max = Math.min(max ?: 10, 100)
         [parentInstanceList: Parent.list(params), parentInstanceTotal: Parent.count()]
     }
-	@Secured(['ROLE_PARENT'])
+	//@Secured(['ROLE_PARENT'])
     def create() {
         [parentInstance: new Parent(params)]
     }

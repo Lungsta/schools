@@ -1,5 +1,6 @@
 
 <%@ page import="com.cland.schools.Applicant" %>
+<%@ page import="com.cland.schools.SystemRoles" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,6 +22,7 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			<sec:ifAnyGranted roles="${SystemRoles.ROLE_PARENT }">
 			<ol class="property-list applicant">
 			
 				<g:if test="${applicantInstance?.firstName}">
@@ -78,11 +80,14 @@
 				</g:if>
 			
 			</ol>
+			</sec:ifAnyGranted>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${applicantInstance?.id}" />
+					<sec:ifAnyGranted roles="${SystemRoles.ROLE_PARENT }">
 					<g:link class="edit" action="edit" id="${applicantInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					</sec:ifAnyGranted>
 				</fieldset>
 			</g:form>
 		</div>
