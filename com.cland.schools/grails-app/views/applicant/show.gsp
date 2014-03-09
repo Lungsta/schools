@@ -7,6 +7,7 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'applicant.label', default: 'Applicant')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<g:javascript library="application"/>
 	</head>
 	<body>
 		<a href="#show-applicant" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -22,65 +23,8 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<sec:ifAnyGranted roles="${SystemRoles.ROLE_PARENT }">
-			<ol class="property-list applicant">
+			<g:render template="tabs"/>
 			
-				<g:if test="${applicantInstance?.firstName}">
-				<li class="fieldcontain">
-					<span id="firstName-label" class="property-label"><g:message code="applicant.firstName.label" default="First Name" /></span>
-					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${applicantInstance}" field="firstName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicantInstance?.lastName}">
-				<li class="fieldcontain">
-					<span id="lastName-label" class="property-label"><g:message code="applicant.lastName.label" default="Last Name" /></span>
-					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${applicantInstance}" field="lastName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicantInstance?.dob}">
-				<li class="fieldcontain">
-					<span id="dob-label" class="property-label"><g:message code="applicant.dob.label" default="Dob" /></span>
-					
-						<span class="property-value" aria-labelledby="dob-label"><g:formatDate date="${applicantInstance?.dob}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicantInstance?.address}">
-				<li class="fieldcontain">
-					<span id="address-label" class="property-label"><g:message code="applicant.address.label" default="Address" /></span>
-					
-						<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${applicantInstance}" field="address"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicantInstance?.contactNumber}">
-				<li class="fieldcontain">
-					<span id="contactNumber-label" class="property-label"><g:message code="applicant.contactNumber.label" default="Contact Number" /></span>
-					
-						<span class="property-value" aria-labelledby="contactNumber-label"><g:fieldValue bean="${applicantInstance}" field="contactNumber"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicantInstance?.parent}">
-				<li class="fieldcontain">
-					<span id="parent-label" class="property-label"><g:message code="applicant.parent.label" default="Parent" /></span>
-					
-						<span class="property-value" aria-labelledby="parent-label"><g:link controller="parent" action="show" id="${applicantInstance?.parent?.id}">${applicantInstance?.parent?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			</sec:ifAnyGranted>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${applicantInstance?.id}" />
@@ -91,5 +35,14 @@
 				</fieldset>
 			</g:form>
 		</div>
+		<script type="text/javascript">
+// when the page has finished loading.. execute the follow
+
+$(document).ready(function() {
+
+	$("#tabs").tabs();		                
+});  //end method ready(...)
+
+</script>		
 	</body>
 </html>

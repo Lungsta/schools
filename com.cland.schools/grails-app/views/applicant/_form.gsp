@@ -7,7 +7,7 @@
 		<g:message code="applicant.firstName.label" default="First Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="firstName" cols="40" rows="5" maxlength="255" required="" value="${applicantInstance?.firstName}"/>
+	<g:textArea name="firstName" cols="40" rows="1" maxlength="255" required="" value="${applicantInstance?.firstName}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'lastName', 'error')} required">
@@ -15,7 +15,7 @@
 		<g:message code="applicant.lastName.label" default="Last Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="lastName" cols="40" rows="5" maxlength="255" required="" value="${applicantInstance?.lastName}"/>
+	<g:textArea name="lastName" cols="40" rows="1" maxlength="255" required="" value="${applicantInstance?.lastName}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'dob', 'error')} required">
@@ -31,7 +31,7 @@
 		<g:message code="applicant.address.label" default="Address" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="address" cols="40" rows="5" maxlength="255" required="" value="${applicantInstance?.address}"/>
+	<g:textArea name="address" cols="40" rows="1" maxlength="255" required="" value="${applicantInstance?.address}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'contactNumber', 'error')} ">
@@ -39,7 +39,7 @@
 		<g:message code="applicant.contactNumber.label" default="Contact Number" />
 		
 	</label>
-	<g:textArea name="contactNumber" cols="40" rows="5" maxlength="255" value="${applicantInstance?.contactNumber}"/>
+	<g:textArea name="contactNumber" cols="40" rows="1" maxlength="255" value="${applicantInstance?.contactNumber}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: applicantInstance, field: 'parent', 'error')} required">

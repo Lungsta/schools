@@ -33,13 +33,15 @@ class ApplicantController {
 
     def show(Long id) {
         def applicantInstance = Applicant.get(id)
+		def applicationInstanceList = Application.findAllByApplicant(applicantInstance)
+		
         if (!applicantInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'applicant.label', default: 'Applicant'), id])
             redirect(action: "list")
             return
         }
 
-        [applicantInstance: applicantInstance]
+        [applicantInstance: applicantInstance, applicationInstanceList: applicationInstanceList]
     }
 
     def edit(Long id) {
