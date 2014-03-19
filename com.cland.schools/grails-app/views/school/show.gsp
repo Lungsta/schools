@@ -23,47 +23,40 @@
 			</g:if>
 			<ol class="property-list school">
 			
-				<g:if test="${schoolInstance?.address}">
-				<li class="fieldcontain">
-					<span id="address-label" class="property-label"><g:message code="school.address.label" default="Address" /></span>
-					
-						<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${schoolInstance}" field="address"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${schoolInstance?.application}">
-				<li class="fieldcontain">
-					<span id="application-label" class="property-label"><g:message code="school.application.label" default="Application" /></span>
-					
-						<span class="property-value" aria-labelledby="application-label"><g:link controller="application" action="show" id="${schoolInstance?.application?.id}">${schoolInstance?.application?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${schoolInstance?.avail_space}">
-				<li class="fieldcontain">
-					<span id="avail_space-label" class="property-label"><g:message code="school.avail_space.label" default="Availspace" /></span>
-					
-						<span class="property-value" aria-labelledby="avail_space-label"><g:fieldValue bean="${schoolInstance}" field="avail_space"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${schoolInstance?.grade}">
-				<li class="fieldcontain">
-					<span id="grade-label" class="property-label"><g:message code="school.grade.label" default="Grade" /></span>
-					
-						<span class="property-value" aria-labelledby="grade-label"><g:fieldValue bean="${schoolInstance}" field="grade"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${schoolInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="school.name.label" default="Name" /></span>
 					
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${schoolInstance}" field="name"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${schoolInstance?.appStatDate}">
+				<li class="fieldcontain">
+					<span id="appStatDate-label" class="property-label"><g:message code="school.appStatDate.label" default="App Stat Date" /></span>
+					
+						<span class="property-value" aria-labelledby="appStatDate-label"><g:formatDate date="${schoolInstance?.appStatDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${schoolInstance?.appCloseDate}">
+				<li class="fieldcontain">
+					<span id="appCloseDate-label" class="property-label"><g:message code="school.appCloseDate.label" default="App Close Date" /></span>
+					
+						<span class="property-value" aria-labelledby="appCloseDate-label"><g:formatDate date="${schoolInstance?.appCloseDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${schoolInstance?.levels}">
+				<li class="fieldcontain">
+					<span id="levels-label" class="property-label"><g:message code="school.levels.label" default="Levels" /></span>
+					
+						<g:each in="${schoolInstance.levels}" var="l">
+						<span class="property-value" aria-labelledby="levels-label"><g:link controller="schoolLevel" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

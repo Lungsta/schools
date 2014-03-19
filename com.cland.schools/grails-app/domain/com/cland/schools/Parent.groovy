@@ -14,17 +14,17 @@ class Parent {
 	static hasMany=[applicants:Applicant]
 	
     static constraints = {
-		firstName1(blank: false, nullable: false, maxSize: 255)
-		lastName1(blank: false, nullable: false, maxSize: 255)
-		firstName2(blank: false, nullable: false, maxSize: 255)
-		lastName2(blank: false, nullable: false, maxSize: 255)
-		firstName3(blank: false, nullable: false, maxSize: 255)
-		lastName3(blank: false, nullable: false, maxSize: 255)
-		email(blank: false, nullable: false, maxSize: 255)
-		address(blank: false, nullable: false, maxSize: 255)
-		contactNumber(nullable: true, maxSize: 255)
+		firstName1(blank: false, nullable: false)
+		lastName1(blank: false, nullable: false)
+		firstName2(blank: false, nullable: false)
+		lastName2(blank: false, nullable: false)
+		firstName3(blank: false, nullable: false)
+		lastName3(blank: false, nullable: false)
+		email(blank: false, nullable: false)
+		address(blank: false, nullable: false)
+		contactNumber(nullable: true)
     }
 	String toString(){
-		"${firstName1}"
+		"${lastName1}"
 	}
 }

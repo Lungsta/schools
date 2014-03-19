@@ -41,30 +41,21 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${applicationInstance?.grade}">
+				<g:if test="${applicationInstance?.appliedLevel}">
 				<li class="fieldcontain">
-					<span id="grade-label" class="property-label"><g:message code="application.grade.label" default="Grade" /></span>
+					<span id="appliedLevel-label" class="property-label"><g:message code="application.appliedLevel.label" default="Applied Level" /></span>
 					
-						<span class="property-value" aria-labelledby="grade-label"><g:fieldValue bean="${applicationInstance}" field="grade"/></span>
+						<span class="property-value" aria-labelledby="appliedLevel-label"><g:link controller="schoolLevel" action="show" id="${applicationInstance?.appliedLevel?.id}">${applicationInstance?.appliedLevel?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${applicationInstance?.parent}">
+				<g:if test="${applicationInstance?.entries}">
 				<li class="fieldcontain">
-					<span id="parent-label" class="property-label"><g:message code="application.parent.label" default="Parent" /></span>
+					<span id="entries-label" class="property-label"><g:message code="application.entries.label" default="Entries" /></span>
 					
-						<span class="property-value" aria-labelledby="parent-label"><g:link controller="parent" action="show" id="${applicationInstance?.parent?.id}">${applicationInstance?.parent?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${applicationInstance?.schools}">
-				<li class="fieldcontain">
-					<span id="schools-label" class="property-label"><g:message code="application.schools.label" default="Schools" /></span>
-					
-						<g:each in="${applicationInstance.schools}" var="s">
-						<span class="property-value" aria-labelledby="schools-label"><g:link controller="school" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						<g:each in="${applicationInstance.entries}" var="e">
+						<span class="property-value" aria-labelledby="entries-label"><g:link controller="applicationEntry" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

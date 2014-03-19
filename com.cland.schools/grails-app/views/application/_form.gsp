@@ -18,34 +18,26 @@
 	<g:datePicker name="application_date" precision="day"  value="${applicationInstance?.application_date}" default="none" noSelection="['': '']" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'grade', 'error')} required">
-	<label for="grade">
-		<g:message code="application.grade.label" default="Grade" />
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'appliedLevel', 'error')} required">
+	<label for="appliedLevel">
+		<g:message code="application.appliedLevel.label" default="Applied Level" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="grade" from="${applicationInstance.constraints.grade.inList}" required="" value="${fieldValue(bean: applicationInstance, field: 'grade')}" valueMessagePrefix="application.grade"/>
+	<g:select id="appliedLevel" name="appliedLevel.id" from="${com.cland.schools.SchoolLevel.list()}" optionKey="id" required="" value="${applicationInstance?.appliedLevel?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'parent', 'error')} required">
-	<label for="parent">
-		<g:message code="application.parent.label" default="Parent" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="parent" name="parent.id" from="${com.cland.schools.Parent.list()}" optionKey="id" required="" value="${applicationInstance?.parent?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'schools', 'error')} ">
-	<label for="schools">
-		<g:message code="application.schools.label" default="Schools" />
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'entries', 'error')} ">
+	<label for="entries">
+		<g:message code="application.entries.label" default="Entries" />
 		
 	</label>
 	
 <ul class="one-to-many">
-<g:each in="${applicationInstance?.schools?}" var="s">
-    <li><g:link controller="school" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
+<g:each in="${applicationInstance?.entries?}" var="e">
+    <li><g:link controller="applicationEntry" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="school" action="create" params="['application.id': applicationInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'school.label', default: 'School')])}</g:link>
+<g:link controller="applicationEntry" action="create" params="['application.id': applicationInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'applicationEntry.label', default: 'ApplicationEntry')])}</g:link>
 </li>
 </ul>
 

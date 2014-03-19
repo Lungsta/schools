@@ -10,4 +10,7 @@ class Advert {
 		description(nullable: true)
 		created(nullable: false, blank: false)
     }
+	String toString(){
+		"${name}"
+	}
 }

@@ -2,16 +2,20 @@ package com.cland.schools
 
 class Application {
 
-	Date application_date;
-	int grade;
-	Parent parent
-	Applicant applicant
-	static hasMany=[schools:School]
+	Date application_date			//of application submitted
+	SchoolLevel appliedLevel	//The grade the applicant is applying for
+
+	static hasMany = [entries:ApplicationEntry]  //schools applied for
+
+	static belongsTo = [applicant:Applicant]	 //applicant is already linked to parent
+	static transients = ['parent']
 	
     static constraints = {
 		applicant(nullable: true)
 		application_date(nullable: true, unique: true)
-		grade blank: false, nullable: false, inList:[0,1,2,3,4,5,6,7,8,9,10,11,12]
 		
     }
+	String toString(){
+		"Application for ${applicant?.firstName}"
+	}
 }

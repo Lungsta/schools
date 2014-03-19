@@ -2,15 +2,17 @@ package com.cland.schools
 
 class School {
 	String name 
-	String address
-	int grade
-	String avail_space
+	Date appStatDate
+	Date appCloseDate
 	
-	static belongsTo=[application:Application]
+	static hasMany = [levels:SchoolLevel] //grade 1 to 3
 
     static constraints = {
 		name nullable: false, blank: false, unique: true
-        address unique: true, nullable: false, blank: false
-		grade unique: true, nullable: false, blank: false
+        appStatDate unique: true, nullable: false, blank: false
+		appCloseDate unique: true, nullable: false, blank: false
 }
+	String toString(){
+		"${name}"
+	}
 }

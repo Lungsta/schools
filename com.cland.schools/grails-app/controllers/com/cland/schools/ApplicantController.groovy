@@ -3,7 +3,6 @@ package com.cland.schools
 import org.springframework.dao.DataIntegrityViolationException
 
 class ApplicantController {
-	//static scaffold = true
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -33,15 +32,13 @@ class ApplicantController {
 
     def show(Long id) {
         def applicantInstance = Applicant.get(id)
-		def applicationInstanceList = Application.findAllByApplicant(applicantInstance)
-		
         if (!applicantInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'applicant.label', default: 'Applicant'), id])
             redirect(action: "list")
             return
         }
 
-        [applicantInstance: applicantInstance, applicationInstanceList: applicationInstanceList]
+        [applicantInstance: applicantInstance]
     }
 
     def edit(Long id) {
@@ -102,5 +99,4 @@ class ApplicantController {
             redirect(action: "show", id: id)
         }
     }
-	
 }

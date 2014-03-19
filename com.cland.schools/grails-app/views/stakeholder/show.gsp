@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${stakeholderInstance?.contactNumber}">
-				<li class="fieldcontain">
-					<span id="contactNumber-label" class="property-label"><g:message code="stakeholder.contactNumber.label" default="Contact Number" /></span>
-					
-						<span class="property-value" aria-labelledby="contactNumber-label"><g:fieldValue bean="${stakeholderInstance}" field="contactNumber"/></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

@@ -24,15 +24,11 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="address" title="${message(code: 'school.address.label', default: 'Address')}" />
-					
-						<th><g:message code="school.application.label" default="Application" /></th>
-					
-						<g:sortableColumn property="avail_space" title="${message(code: 'school.avail_space.label', default: 'Availspace')}" />
-					
-						<g:sortableColumn property="grade" title="${message(code: 'school.grade.label', default: 'Grade')}" />
-					
 						<g:sortableColumn property="name" title="${message(code: 'school.name.label', default: 'Name')}" />
+					
+						<g:sortableColumn property="appStatDate" title="${message(code: 'school.appStatDate.label', default: 'App Stat Date')}" />
+					
+						<g:sortableColumn property="appCloseDate" title="${message(code: 'school.appCloseDate.label', default: 'App Close Date')}" />
 					
 					</tr>
 				</thead>
@@ -40,15 +36,11 @@
 				<g:each in="${schoolInstanceList}" status="i" var="schoolInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${schoolInstance.id}">${fieldValue(bean: schoolInstance, field: "address")}</g:link></td>
+						<td><g:link action="show" id="${schoolInstance.id}">${fieldValue(bean: schoolInstance, field: "name")}</g:link></td>
 					
-						<td>${fieldValue(bean: schoolInstance, field: "application")}</td>
+						<td><g:formatDate date="${schoolInstance.appStatDate}" /></td>
 					
-						<td>${fieldValue(bean: schoolInstance, field: "avail_space")}</td>
-					
-						<td>${fieldValue(bean: schoolInstance, field: "grade")}</td>
-					
-						<td>${fieldValue(bean: schoolInstance, field: "name")}</td>
+						<td><g:formatDate date="${schoolInstance.appCloseDate}" /></td>
 					
 					</tr>
 				</g:each>

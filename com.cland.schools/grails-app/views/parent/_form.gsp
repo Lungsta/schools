@@ -7,7 +7,7 @@
 		<g:message code="parent.firstName1.label" default="First Name1" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="firstName1" cols="40" rows="1" maxlength="255" required="" value="${parentInstance?.firstName1}"/>
+	<g:textField name="firstName1" required="" value="${parentInstance?.firstName1}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'lastName1', 'error')} required">
@@ -15,7 +15,7 @@
 		<g:message code="parent.lastName1.label" default="Last Name1" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="lastName1" cols="40" rows="1" maxlength="255" required="" value="${parentInstance?.lastName1}"/>
+	<g:textField name="lastName1" required="" value="${parentInstance?.lastName1}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'firstName2', 'error')} required">
@@ -23,7 +23,7 @@
 		<g:message code="parent.firstName2.label" default="First Name2" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="firstName2" cols="40" rows="1" maxlength="255" required="" value="${parentInstance?.firstName2}"/>
+	<g:textField name="firstName2" required="" value="${parentInstance?.firstName2}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'lastName2', 'error')} required">
@@ -31,7 +31,7 @@
 		<g:message code="parent.lastName2.label" default="Last Name2" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="lastName2" cols="40" rows="1" maxlength="255" required="" value="${parentInstance?.lastName2}"/>
+	<g:textField name="lastName2" required="" value="${parentInstance?.lastName2}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'firstName3', 'error')} required">
@@ -39,7 +39,7 @@
 		<g:message code="parent.firstName3.label" default="First Name3" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="firstName3" cols="40" rows="1" maxlength="255" required="" value="${parentInstance?.firstName3}"/>
+	<g:textField name="firstName3" required="" value="${parentInstance?.firstName3}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'lastName3', 'error')} required">
@@ -47,7 +47,7 @@
 		<g:message code="parent.lastName3.label" default="Last Name3" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="lastName3" cols="40" rows="1" maxlength="255" required="" value="${parentInstance?.lastName3}"/>
+	<g:textField name="lastName3" required="" value="${parentInstance?.lastName3}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'email', 'error')} required">
@@ -55,7 +55,7 @@
 		<g:message code="parent.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="email" cols="40" rows="5" maxlength="255" required="" value="${parentInstance?.email}"/>
+	<g:textField name="email" required="" value="${parentInstance?.email}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'address', 'error')} required">
@@ -63,7 +63,7 @@
 		<g:message code="parent.address.label" default="Address" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="address" cols="40" rows="5" maxlength="255" required="" value="${parentInstance?.address}"/>
+	<g:textField name="address" required="" value="${parentInstance?.address}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'contactNumber', 'error')} ">
@@ -71,7 +71,7 @@
 		<g:message code="parent.contactNumber.label" default="Contact Number" />
 		
 	</label>
-	<g:textArea name="contactNumber" cols="40" rows="1" maxlength="255" value="${parentInstance?.contactNumber}"/>
+	<g:textField name="contactNumber" value="${parentInstance?.contactNumber}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: parentInstance, field: 'applicants', 'error')} ">

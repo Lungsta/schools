@@ -26,8 +26,6 @@
 					
 						<g:sortableColumn property="name" title="${message(code: 'stakeholder.name.label', default: 'Name')}" />
 					
-						<g:sortableColumn property="contactNumber" title="${message(code: 'stakeholder.contactNumber.label', default: 'Contact Number')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -35,8 +33,6 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${stakeholderInstance.id}">${fieldValue(bean: stakeholderInstance, field: "name")}</g:link></td>
-					
-						<td>${fieldValue(bean: stakeholderInstance, field: "contactNumber")}</td>
 					
 					</tr>
 				</g:each>

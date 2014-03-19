@@ -3,7 +3,6 @@ package com.cland.schools
 import org.springframework.dao.DataIntegrityViolationException
 
 class SchoolController {
-	//static scaffold = true
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 

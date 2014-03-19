@@ -10,11 +10,11 @@ class Applicant {
 	
 	static belongsTo=[parent:Parent]
 	static constraints = {
-		firstName(blank: false, nullable: false, maxSize: 255)
-		lastName(blank: false, nullable: false, maxSize: 255)
-		dob(blank: false, nullable: false, maxSize: 255)
-		address(blank: false, nullable: false, maxSize: 255)
-		contactNumber(nullable: true, maxSize: 255)
+		firstName(blank: false, nullable: false)
+		lastName(blank: false, nullable: false)
+		dob(blank: false, nullable: false)
+		address(blank: false, nullable: false)
+		contactNumber(nullable: true)
 	}
 	String toString(){
 		"${firstName}"
